@@ -88,6 +88,7 @@ checkRootAccess
 checkDependency "git"
 checkDependency "curl"
 checkDependency "wget"
+checkDependency "unzip"
 checkDependency "docker-io"
 checkDockerCompose
 checkSxapiCli
