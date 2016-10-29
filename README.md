@@ -1,10 +1,7 @@
-# sxapi-installer
-install sxapi working environement
-
 SXAPI Installer
 ===============
 
-[![Travis](https://travis-ci.org//startxfr/sxapi-installer.svg?branch=master)](https://travis-ci.org/startxfr/sxapi-installer)
+[![Travis](https://travis-ci.org//startxfr/sxapi-installer.svg?branch=dev)](https://travis-ci.org/startxfr/sxapi-installer)
 
 ***SXAPI*** is a microservice framework optimized for building simple and extensible API efficiently. 
 
@@ -24,7 +21,7 @@ Getting Started
 Run the following commands
 
 ```
-wget https://raw.githubusercontent.com/startxfr/sxapi-installer/master/install.sh -O - | bash
+wget https://raw.githubusercontent.com/startxfr/sxapi-installer/dev/install.sh -O - | bash
 ```
 
 ### Troubleshooting
