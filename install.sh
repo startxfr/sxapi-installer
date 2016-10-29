@@ -3,7 +3,7 @@
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer on $(cat /etc/redhat-release)"
+    echo "== SXAPI Installer (master)"
     echo "==================================" 
     echo ""
 }
