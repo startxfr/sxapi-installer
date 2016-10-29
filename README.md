@@ -21,7 +21,7 @@ Getting Started
 Run the following commands
 
 ```
-wget https://raw.githubusercontent.com/startxfr/sxapi-installer/master/install.sh -O - | bash
+wget https://raw.githubusercontent.com/startxfr/sxapi-installer/0.0.3/install.sh -O - | bash
 ```
 
 ### Troubleshooting
