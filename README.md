@@ -11,8 +11,8 @@ Getting Started
 
 ### Pre-requisites
 
-* Fedora Linux OS
-* sudo access
+* Fedora Linux OS (if not, [install virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads) and [start a Fedora VM](https://wiki.dlib.indiana.edu/display/VarVideo/Installing+Fedora+23+on+a+VirtualBox+VM))
+* root access (only for installing required software)
 * wget tool (```sudo yum install -y wget```)
 
 
@@ -21,7 +21,8 @@ Getting Started
 Run the following commands
 
 ```
-wget https://raw.githubusercontent.com/startxfr/sxapi-installer/dev/install.sh -O - | bash
+su -
+wget https://goo.gl/3N9ui6 -O - | bash
 ```
 
 ### Troubleshooting
