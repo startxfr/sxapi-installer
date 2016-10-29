@@ -40,7 +40,7 @@ function checkDockerCompose {
         echo " - docker-compose : NOT FOUND"
         echo -n "   Installing docker-compose ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
-            curl -L "$URL" > /usr/local/bin/docker-compose
+            curl --silent -L "$URL" > /usr/local/bin/docker-compose
             chmod +x /usr/local/bin/docker-compose
             echo "DONE"
         else
@@ -60,7 +60,7 @@ function checkSxapiCli {
         echo " - sxapi-cli : NOT FOUND"
         echo -n "   Installing sxapi-cli ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
-            curl -L "$URL" > /usr/local/bin/sxapi-cli
+            curl --silent -L "$URL" > /usr/local/bin/sxapi-cli
             chmod +x /usr/local/bin/sxapi-cli
             echo "DONE"
         else
