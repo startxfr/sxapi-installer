@@ -3,7 +3,7 @@
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer (dev)"
+    echo "== SXAPI Installer (master)"
     echo "==================================" 
     echo ""
 }
