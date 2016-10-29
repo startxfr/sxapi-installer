@@ -54,7 +54,7 @@ function checkDockerCompose {
 }
 
 function checkSxapiCli {
-    VERSION="master"
+    VERSION="dev"
     URL=https://raw.githubusercontent.com/startxfr/sxapi-console/$VERSION/cli.sh
     if [ ! -f /usr/local/bin/sxapi-installer ]; then
         echo " - sxapi-cli : NOT FOUND"
