@@ -35,12 +35,19 @@ function checkDependency {
 
 function checkDockerCompose {
     VERSION="1.8.0"
+    URL=https://github.com/docker/compose/releases/download/$VERSION/docker-compose-`uname -s`-`uname -m`
     if [ ! -f /usr/local/bin/docker-compose ]; then
         echo " - docker-compose : NOT FOUND"
         echo -n "   Installing docker-compose ... "
-        curl -L https://github.com/docker/compose/releases/download/$VERSION/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-        chmod +x /usr/local/bin/docker-compose
-        echo "DONE"
+        if curl --output /dev/null --silent --head --fail "$URL"; then
+            curl -L "$URL" > /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            echo "DONE"
+        else
+            echo "ERROR"
+            echo "   Could not download docker-compose v$VERSION" 
+            exit;
+        fi
     else 
         echo " - docker-compose : FOUND"
     fi
@@ -48,12 +55,19 @@ function checkDockerCompose {
 
 function checkSxapiCli {
     VERSION="master"
+    URL=https://raw.githubusercontent.com/startxfr/sxapi-console/$VERSION/cli.sh
     if [ ! -f /usr/local/bin/sxapi-installer ]; then
         echo " - sxapi-cli : NOT FOUND"
         echo -n "   Installing sxapi-cli ... "
-        curl -L https://github.com/startxfr/sxapi-console/releases/download/$VERSION/cli.sh > /usr/local/bin/sxapi-cli
-        chmod +x /usr/local/bin/sxapi-cli
-        echo "DONE"
+        if curl --output /dev/null --silent --head --fail "$URL"; then
+            curl -L "$URL" > /usr/local/bin/sxapi-cli
+            chmod +x /usr/local/bin/sxapi-cli
+            echo "DONE"
+        else
+            echo "ERROR"
+            echo "   Could not download sxapi-console v$VERSION" 
+            exit;
+        fi
     else 
         echo " - sxapi-installer : FOUND"
     fi
