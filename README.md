@@ -22,7 +22,7 @@ Run the following commands
 
 ```
 su -
-wget https://goo.gl/KdGNDH -O - | bash
+wget https://goo.gl/9g5mIH -O - | bash
 ```
 
 ### Troubleshooting
