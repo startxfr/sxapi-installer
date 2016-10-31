@@ -1,5 +1,6 @@
 #!/bin/bash
 
+SXAPIINSTALLER_VERSION="master"
 SXAPI_CONSOLE_REPO="startxfr/sxapi-console"
 SXAPICLI_VERSION="master"
 SXAPICWS_VERSION="master"
@@ -10,7 +11,7 @@ OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer (master)"
+    echo "== SXAPI Installer ($SXAPIINSTALLER_VERSION)"
     echo "==================================" 
     displayMenu
 }
