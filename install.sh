@@ -1,8 +1,9 @@
 #!/bin/bash
 
+SXAPIINSTALLER_VERSION="v0.1.2"
 SXAPI_CONSOLE_REPO="startxfr/sxapi-console"
-SXAPICLI_VERSION="0.0.5"
-SXAPICWS_VERSION="0.0.5"
+SXAPICLI_VERSION="v0.0.5"
+SXAPICWS_VERSION="v0.0.5"
 DOCKERCOMPOSE_VERSION="1.5.0"
 
 OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/["]//g' | awk '{print $1}'`
@@ -10,7 +11,7 @@ OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer (v0.1.2)"
+    echo "== SXAPI Installer ($SXAPIINSTALLER_VERSION)"
     echo "==================================" 
     displayMenu
 }
