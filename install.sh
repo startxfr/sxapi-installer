@@ -5,6 +5,7 @@ SXAPICLI_VERSION="dev"
 SXAPICWS_VERSION="dev"
 DOCKERCOMPOSE_VERSION="1.5.0"
 
+OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/["]//g' | awk '{print $1}'`
 
 function displayStartInstallation {
     echo "" 
@@ -34,9 +35,21 @@ function displayMenu {
 
 function displayInstallServer { 
     checkRootAccess
-    checkDependency "curl"
-    checkDependency "jq"
-    checkDependency "docker-io"
+    echo $OS;
+    case "$OS" in
+        Red|Centos)
+            checkDependency "curl"
+            wget http://stedolan.github.io/jq/download/linux64/jq
+            chmod +x ./jq
+            cp jq /usr/bin
+            checkDependency "docker"
+        ;;
+        *)
+            checkDependency "curl"
+            checkDependency "jq"
+            checkDependency "docker-io"
+        ;;
+    esac
     checkDockerStarted
     checkDockerCompose
     checkSxapiCws
@@ -48,12 +61,26 @@ function displayInstallServer {
 
 function displayInstallWorkstation { 
     checkRootAccess
-    checkDependency "curl"
-    checkDependency "jq"
-    checkDependency "wget"
-    checkDependency "git"
-    checkDependency "unzip"
-    checkDependency "docker-io"
+    case "$OS" in
+        Red|Centos)
+            checkDependency "curl"
+            wget http://stedolan.github.io/jq/download/linux64/jq
+            chmod +x ./jq
+            cp jq /usr/bin
+            checkDependency "wget"
+            checkDependency "git"
+            checkDependency "unzip"
+            checkDependency "docker"
+        ;;
+        *)
+            checkDependency "curl"
+            checkDependency "jq"
+            checkDependency "wget"
+            checkDependency "git"
+            checkDependency "unzip"
+            checkDependency "docker-io"
+        ;;
+    esac
     checkDockerStarted
     checkDockerCompose
     checkSxapiCli
