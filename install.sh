@@ -1,15 +1,15 @@
 #!/bin/bash
 
 SXAPI_CONSOLE_REPO="startxfr/sxapi-console"
-SXAPICLI_VERSION="master"
-SXAPICWS_VERSION="master"
+SXAPICLI_VERSION="0.0.5"
+SXAPICWS_VERSION="0.0.5"
 DOCKERCOMPOSE_VERSION="1.5.0"
 
 
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer (v0.1)"
+    echo "== SXAPI Installer (v0.0.5)"
     echo "==================================" 
     displayMenu
 }
