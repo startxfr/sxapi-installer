@@ -22,7 +22,7 @@ Run the following commands
 
 ```
 su -
-wget https://goo.gl/9g5mIH -O - | bash
+wget https://goo.gl/CKdHr8 -O sxapi-installer && chmod ug+x sxapi-installer && ./sxapi-installer
 ```
 
 ### Troubleshooting
