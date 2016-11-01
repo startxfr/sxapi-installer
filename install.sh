@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SXAPIINSTALLER_VERSION="v0.1.2"
+SXAPIINSTALLER_VERSION="v0.1.3"
 SXAPI_CONSOLE_REPO="startxfr/sxapi-console"
-SXAPICLI_VERSION="v0.0.5"
-SXAPICWS_VERSION="v0.0.5"
+SXAPICLI_VERSION="v0.0.6"
+SXAPICWS_VERSION="v0.0.6"
 DOCKERCOMPOSE_VERSION="1.5.0"
 
 OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/["]//g' | awk '{print $1}'`

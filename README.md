@@ -1,7 +1,7 @@
 SXAPI Installer
 ===============
 
-[![Travis](https://travis-ci.org//startxfr/sxapi-installer.svg?tag=v0.0.5)](https://travis-ci.org/startxfr/sxapi-installer)
+[![Travis](https://travis-ci.org//startxfr/sxapi-installer.svg?tag=v0.1.3)](https://travis-ci.org/startxfr/sxapi-installer)
 
 ***SXAPI*** is a microservice framework optimized for building simple and extensible API efficiently. 
 
