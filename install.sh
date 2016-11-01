@@ -36,7 +36,6 @@ function displayMenu {
 
 function displayInstallServer { 
     checkRootAccess
-    echo $OS;
     case "$OS" in
         Red|Centos)
             checkDependency "curl"

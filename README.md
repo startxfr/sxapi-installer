@@ -25,6 +25,8 @@ su -
 wget https://goo.gl/CKdHr8 -O sxapi-installer && chmod ug+x sxapi-installer && ./sxapi-installer
 ```
 
+Menu is interactive. If you want to setup both environement, you can execute again sxapi-installer. After installation, you can remove sapi-installer with `rm sxapi-installer`
+
 ### Troubleshooting
 
 If you run into difficulties installing or running sxapi, please report [issue for installer](https://github.com/startxfr/sxapi-installer/issues/new) or  [issue for sxapi](https://github.com/startxfr/sxapi-core/issues/new).
