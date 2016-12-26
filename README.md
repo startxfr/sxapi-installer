@@ -3,7 +3,11 @@ SXAPI Installer
 
 [![Travis](https://travis-ci.org//startxfr/sxapi-installer.svg?tag=v0.1.3)](https://travis-ci.org/startxfr/sxapi-installer)
 
-***SXAPI*** is a microservice framework optimized for building simple and extensible API efficiently. 
+This project help you building a full developement or production sxapi environement. 
+Instead of manually installing these environement you can use this installer to setup your 
+environement and start developping sxapi microservice within a minute. **SXAPI** is a microservice 
+framework optimized for building simple and extensible API efficiently. 
+You can have [more information on the sxapi-core project page](https://github.com/startxfr/sxapi-core)  
 
 
 Getting Started
@@ -15,7 +19,6 @@ Getting Started
 * root access (only for installing required software)
 * wget tool (```sudo yum install -y wget```)
 
-
 ### Execute the installer
 
 Run the following commands
@@ -25,7 +28,21 @@ su -
 wget https://goo.gl/CKdHr8 -O sxapi-installer && chmod ug+x sxapi-installer && ./sxapi-installer
 ```
 
-Menu is interactive. If you want to setup both environement, you can execute again sxapi-installer. After installation, you can remove sapi-installer with `rm sxapi-installer`
+Menu is interactive. If you want to setup both workstation and server environement, you can execute again sxapi-installer. After installation, you can remove sapi-installer with `rm sxapi-installer`
+
+
+### Installation type
+
+#### Server installation
+
+Install docker, docker-compose and [sxapi-console-cws](https://github.com/startxfr/sxapi-console/blob/master/docs/3.CWS.md). Start docker daemon and sxapi-console-cws instance. 
+After this installation, your server can execute one or multiple sxapi micro-services
+
+#### Dev workstation installation
+
+Install docker, docker-compose and [sxapi-console-cli](https://github.com/startxfr/sxapi-console/blob/master/docs/2.CLI.md). Start docker daemon.
+After this installation, your workstation can execute one or multiple sxapi micro-services based on the [sxapi-sample](https://github.com/startxfr/sxapi-sample/blob/master/README.md)
+
 
 ### Troubleshooting
 

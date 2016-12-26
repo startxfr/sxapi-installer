@@ -7,6 +7,7 @@ SXAPICWS_VERSION="v0.0.6"
 DOCKERCOMPOSE_VERSION="1.5.0"
 
 OS=`cat /etc/os-release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/["]//g' | awk '{print $1}'`
+SCINS=$0
 
 function displayStartInstallation {
     echo "" 
@@ -20,6 +21,7 @@ function displayMenu {
     echo ""
     echo "1. Install server"
     echo "2. Install dev workstation"
+    echo "8. Remove installer & exit"
     echo "9. Exit"
     echo -n "Enter your choice : "
     read menu
@@ -27,6 +29,9 @@ function displayMenu {
         displayInstallServer
     elif  [  "$menu" == "2"  ]; then
         displayInstallWorkstation
+    elif  [  "$menu" == "8"  ]; then
+        rm -f $(readlink -f $SCINS)
+        exit 1
     elif  [  "$menu" == "9"  ]; then
         exit 1
     else
@@ -157,39 +162,42 @@ function checkDockerCompose {
 function checkSxapiCli {
     URL=https://raw.githubusercontent.com/$SXAPI_CONSOLE_REPO/$SXAPICLI_VERSION/cli.sh
     if [ ! -f /usr/local/bin/sxapi-installer ]; then
-        echo " - sxapi-cli : NOT FOUND"
-        echo -n "   Installing sxapi-cli ... "
+        echo " - sxapi-console CLI : NOT FOUND"
+        echo -n "   Installing sxapi-console CLI ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
             curl --silent -L "$URL" > /usr/local/bin/sxapi-cli
             chmod +x /usr/local/bin/sxapi-cli
             echo "DONE"
         else
             echo "ERROR"
-            echo "   Could not download sxapi-cli v$SXAPICLI_VERSION" 
+            echo "   Could not download sxapi-console CLI v$SXAPICLI_VERSION" 
             exit;
         fi
     else 
-        echo " - sxapi-installer : FOUND"
+        echo " - sxapi-console CLI : FOUND"
     fi
 }
 
 function checkSxapiCws {
     URL=https://raw.githubusercontent.com/$SXAPI_CONSOLE_REPO/$SXAPICWS_VERSION/cws.sh
     if [ ! -f /usr/local/bin/sxapi-installer ]; then
-        echo " - sxapi-cws : NOT FOUND"
-        echo -n "   Installing sxapi-cws ... "
+        echo " - sxapi-console CWS : NOT FOUND"
+        echo -n "   Installing sxapi-console CWS ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
             curl --silent -L "$URL" > /usr/local/bin/sxapi-cws
             chmod +x /usr/local/bin/sxapi-cws
             echo "DONE"
         else
             echo "ERROR"
-            echo "   Could not download sxapi-cws v$SXAPICWS_VERSION" 
+            echo "   Could not download sxapi-console CWS v$SXAPICWS_VERSION" 
             exit;
         fi
     else 
-        echo " - sxapi-installer : FOUND"
+        echo " - sxapi-console CWS : FOUND"
     fi
+    . /usr/local/bin/sxapi-console-cws
+    echo " - Web console started"
+    echo "   you can visit http://localhost:8877 to see this console (user/pwd : admin/admin)"
 }
 
 function displayEndInstallation {
