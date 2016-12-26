@@ -35,13 +35,13 @@ Menu is interactive. If you want to setup both workstation and server environeme
 
 #### Server installation
 
-Install docker, docker-compose and [sxapi-console-cws](https://github.com/startxfr/sxapi-console/blob/dev/docs/3.CWS.md). Start docker daemon and sxapi-console-cws instance. 
+Install docker, docker-compose and [sxapi-console-cws](https://github.com/startxfr/sxapi-console/blob/master/docs/3.CWS.md). Start docker daemon and sxapi-console-cws instance. 
 After this installation, your server can execute one or multiple sxapi micro-services
 
 #### Dev workstation installation
 
-Install docker, docker-compose and [sxapi-console-cli](https://github.com/startxfr/sxapi-console/blob/dev/docs/2.CLI.md). Start docker daemon.
-After this installation, your workstation can execute one or multiple sxapi micro-services based on the [sxapi-sample](https://github.com/startxfr/sxapi-sample/blob/dev/README.md)
+Install docker, docker-compose and [sxapi-console-cli](https://github.com/startxfr/sxapi-console/blob/master/docs/2.CLI.md). Start docker daemon.
+After this installation, your workstation can execute one or multiple sxapi micro-services based on the [sxapi-sample](https://github.com/startxfr/sxapi-sample/blob/master/README.md)
 
 
 ### Troubleshooting
