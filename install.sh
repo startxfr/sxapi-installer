@@ -161,7 +161,7 @@ function checkDockerCompose {
 
 function checkSxapiCli {
     URL=https://raw.githubusercontent.com/$SXAPI_CONSOLE_REPO/$SXAPICLI_VERSION/cli.sh
-    if [ ! -f /usr/local/bin/sxapi-installer ]; then
+    if [ ! -f /usr/local/bin/sxapi-cli ]; then
         echo " - sxapi-console CLI : NOT FOUND"
         echo -n "   Installing sxapi-console CLI ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
@@ -170,7 +170,7 @@ function checkSxapiCli {
             echo "DONE"
         else
             echo "ERROR"
-            echo "   Could not download sxapi-console CLI v$SXAPICLI_VERSION" 
+            echo "   Could not download sxapi-console CLI $SXAPICLI_VERSION" 
             exit;
         fi
     else 
@@ -180,7 +180,7 @@ function checkSxapiCli {
 
 function checkSxapiCws {
     URL=https://raw.githubusercontent.com/$SXAPI_CONSOLE_REPO/$SXAPICWS_VERSION/cws.sh
-    if [ ! -f /usr/local/bin/sxapi-installer ]; then
+    if [ ! -f /usr/local/bin/sxapi-cws ]; then
         echo " - sxapi-console CWS : NOT FOUND"
         echo -n "   Installing sxapi-console CWS ... "
         if curl --output /dev/null --silent --head --fail "$URL"; then
@@ -188,16 +188,17 @@ function checkSxapiCws {
             chmod +x /usr/local/bin/sxapi-cws
             echo "DONE"
         else
-            echo "ERROR"
-            echo "   Could not download sxapi-console CWS v$SXAPICWS_VERSION" 
-            exit;
+            echo "WARNING"
+            echo "   Could not download sxapi-console CWS $SXAPICWS_VERSION" 
         fi
     else 
         echo " - sxapi-console CWS : FOUND"
     fi
-    . /usr/local/bin/sxapi-console-cws
-    echo " - Web console started"
-    echo "   you can visit http://localhost:8877 to see this console (user/pwd : admin/admin)"
+    if [ -f /usr/local/bin/sxapi-cws ]; then
+        . /usr/local/bin/sxapi-console-cws
+        echo " - Web console started"
+        echo "   you can visit http://localhost:8877 to see this console (user/pwd : admin/admin)"
+    fi
 }
 
 function displayEndInstallation {
