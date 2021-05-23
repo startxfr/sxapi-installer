@@ -12,7 +12,7 @@ SCINS=$0
 function displayStartInstallation {
     echo "" 
     echo "==================================" 
-    echo "== SXAPI Installer ($SXAPIINSTALLER_VERSION)"
+    echo "== SXAPI Installer $OS ($SXAPIINSTALLER_VERSION)"
     echo "==================================" 
     displayMenu
 }
@@ -44,9 +44,9 @@ function displayInstallServer {
     case "$OS" in
         Red|Centos)
             checkDependency "curl"
-            wget http://stedolan.github.io/jq/download/linux64/jq
+            wget http://stedolan.github.io/jq/download/linux64/jq -q -O jq
             chmod +x ./jq
-            cp jq /usr/bin
+            mv jq /usr/bin
             checkDependency "docker"
         ;;
         *)
@@ -195,9 +195,9 @@ function checkSxapiCws {
         echo " - sxapi-console CWS : FOUND"
     fi
     if [ -f /usr/local/bin/sxapi-cws ]; then
-        . /usr/local/bin/sxapi-console-cws
+        ./usr/local/bin/sxapi-console-cws start
         echo " - Web console started"
-        echo "   you can visit http://localhost:8877 to see this console (user/pwd : admin/admin)"
+        echo "   you can visit http://localhost:8081 to see this console (user/pwd : admin/admin)"
     fi
 }
 
