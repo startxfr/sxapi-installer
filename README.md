@@ -25,7 +25,7 @@ Run the following commands
 
 ```
 su -
-wget https://goo.gl/3N9ui6 -O sxapi-installer && chmod ug+x sxapi-installer && ./sxapi-installer
+wget https://goo.gl/3N9ui6 -q -O sxapi-installer && chmod ug+x sxapi-installer && ./sxapi-installer
 ```
 
 Menu is interactive. If you want to setup both workstation and server environement, you can execute again sxapi-installer. After installation, you can remove sapi-installer with `rm sxapi-installer`
